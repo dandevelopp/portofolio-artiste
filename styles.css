@@ -7,13 +7,17 @@
     --orange: #b87935;
     --gray: #6e6a63;
     --white: #faf8f3;
+    
+    (--cream,--paper sont des variables CSS.L'intérêt est de 
+    pouvoir changer une couleur une seule fois et de la retrouver 
+    partout où elle est utilisée.)
 
 }
 * {  ( * Tous les éléments HTML.)
 
-		margin: 0;
+		margin: 0;   (supprime les marges par défaut et les espacements intérieurs par défaut.)
 		padding: 0;
-		box-sizing: border-box;
+		box-sizing: border-box; (permet de mieux contrôler la taille réelle des éléments.)
 	}
 html { /* La balise html représente toute la page web. */
     scroll-behavior: smooth; /* Le défilement devient doux et animé quand on clique sur un lien interne (ex. vers #contact), au lieu d'un saut brutal. */
@@ -34,7 +38,7 @@ body { /* La balise body représente tout le contenu visible de la page. */
     line-height: 1.6; /* Hauteur des lignes : 1,6 fois la taille de la police. Un nombre sans unité est un multiplicateur. Le texte est plus aéré et plus lisible. */
 
 }
-h1, /* La virgule permet d'appliquer la même règle à plusieurs éléments à la fois. */
+   h1, /* La virgule permet d'appliquer la même règle à plusieurs éléments à la fois. */
 h2, /* h1, h2 et h3 sont les titres de niveau 1, 2 et 3. */
 h3 {
 
@@ -54,8 +58,8 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     color: inherit; /* inherit = « prends la même valeur que l'élément parent ». Le lien garde la couleur du texte qui l'entoure. */
 
     text-decoration: none; /* Supprime le soulignement par défaut des liens. */
-	.navbar { /* Le point (.) cible tous les éléments qui ont class="navbar" dans le HTML. */
-		}
+}
+.navbar { /* Le point (.) cible tous les éléments qui ont class="navbar" dans le HTML. */
 
     position: absolute; /* Sort la barre du flux normal : elle flotte par-dessus le début de la page et les éléments suivants ne tiennent plus compte d'elle. */
 
@@ -147,7 +151,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     width: 100%; /* La ligne passe à toute la largeur du lien. Grâce à la transition, elle se dessine progressivement de gauche à droite. */
 
 }
-.hero { /* Le hero est la grande zone d'accueil : la première chose que l'on voit en arrivant sur la page. */
+   .hero { /* Le hero est la grande zone d'accueil : la première chose que l'on voit en arrivant sur la page. */
 
     min-height: 100vh; /* Hauteur minimale de la section. vh = « viewport height » (hauteur de la fenêtre). 100vh = 100 % de la hauteur de l'écran : le hero remplit au moins tout l'écran. */
 
@@ -296,7 +300,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     color: var(--gray); /* Texte gris. */
 
 }
-.section-number { /* Une classe réutilisable : on écrit le style une seule fois, puis on l'applique à plusieurs endroits du HTML avec class="section-number". */
+   .section-number { /* Une classe réutilisable : on écrit le style une seule fois, puis on l'applique à plusieurs endroits du HTML avec class="section-number". */
 
     font-size: 12px; /* Très petit texte : 12 pixels. */
 
@@ -307,7 +311,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     color: var(--red); /* Texte rouge, grâce à la variable définie dans :root. Si on change --red, tous les numéros changent aussi. */
 
 }
-.about { /* La section « À propos » (class="about"). */
+   .about { /* La section « À propos » (class="about"). */
 
     padding: 140px 8%; /* Espace intérieur : 140px en haut et en bas, 8% à gauche et à droite. */
 
@@ -379,7 +383,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     margin-bottom: 25px; /* 25 pixels d'espace sous chaque paragraphe, pour les séparer. */
 
 }
-.gallery { /* La section Galerie (class="gallery"). */
+   .gallery { /* La section Galerie (class="gallery"). */
 
     padding: 150px 8%; /* Espace intérieur : 150px en haut et en bas, 8% à gauche et à droite. */
 
@@ -421,7 +425,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     color: var(--red); /* Le mot mis en valeur devient rouge. */
 
 }
-.gallery-grid { /* Le conteneur qui regroupe toutes les œuvres de la galerie. */
+   .gallery-grid { /* Le conteneur qui regroupe toutes les œuvres de la galerie. */
 
     display: grid; /* CSS Grid : les œuvres (enfants directs) se placent dans les cases d'une grille. */
 
