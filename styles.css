@@ -1004,9 +1004,6 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
     }
 
-}
-
-
 @media (max-width: 600px) { /* Une deuxième media query, pour les écrans de 600 pixels ou moins (téléphones). Elle s'ajoute à la précédente : un téléphone reçoit les règles de 900px ET celles de 600px. En cas de conflit, ces dernières gagnent, car elles viennent en dernier. */
 
 
