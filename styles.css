@@ -55,6 +55,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
     text-decoration: none; /* Supprime le soulignement par défaut des liens. */
 	.navbar { /* Le point (.) cible tous les éléments qui ont class="navbar" dans le HTML. */
+		}
 
     position: absolute; /* Sort la barre du flux normal : elle flotte par-dessus le début de la page et les éléments suivants ne tiennent plus compte d'elle. */
 
