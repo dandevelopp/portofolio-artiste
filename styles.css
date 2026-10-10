@@ -22,8 +22,6 @@
 html { /* La balise html représente toute la page web. */
     scroll-behavior: smooth; /* Le défilement devient doux et animé quand on clique sur un lien interne (ex. vers #contact), au lieu d'un saut brutal. */
 }
-
-
 body { /* La balise body représente tout le contenu visible de la page. */
 
     background: var(--cream); /* Couleur de fond de la page. var(--cream) utilise la variable définie dans :root. */
@@ -1116,5 +1114,3 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
         gap: 10px; /* 10 pixels d'espace entre les éléments empilés. */
 
     }
-
-}
