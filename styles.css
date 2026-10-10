@@ -1,32 +1,22 @@
-:root { /* Représente la racine du document HTML. */
-
+:root {
     --cream: #f2eee5;
     --paper: #e8e1d4;
-    --black: #171717;
+    --black: #171717;            
     --red: #8f3028;
     --orange: #b87935;
     --gray: #6e6a63;
-    --white: #faf8f3;
+    --white: #faf8f3;  
+   }
+* { 
 
-    /* --cream, --paper... sont des variables CSS. L'intérêt est de
-       pouvoir changer une couleur une seule fois et de la retrouver
-       partout où elle est utilisée. */
-
-}
-
-* { /* * = tous les éléments HTML. */
-
-    margin: 0; /* Supprime les marges par défaut... */
-    padding: 0; /* ...et les espacements intérieurs par défaut. */
-    box-sizing: border-box; /* Permet de mieux contrôler la taille réelle des éléments. */
-
-}
-
+		margin: 0; 
+		padding: 0;
+		box-sizing: border-box;
+	}
 html { /* La balise html représente toute la page web. */
-
     scroll-behavior: smooth; /* Le défilement devient doux et animé quand on clique sur un lien interne (ex. vers #contact), au lieu d'un saut brutal. */
-
 }
+
 
 body { /* La balise body représente tout le contenu visible de la page. */
 
@@ -42,7 +32,6 @@ body { /* La balise body représente tout le contenu visible de la page. */
     line-height: 1.6; /* Hauteur des lignes : 1,6 fois la taille de la police. Un nombre sans unité est un multiplicateur. Le texte est plus aéré et plus lisible. */
 
 }
-
 h1, /* La virgule permet d'appliquer la même règle à plusieurs éléments à la fois. */
 h2, /* h1, h2 et h3 sont les titres de niveau 1, 2 et 3. */
 h3 {
@@ -53,23 +42,18 @@ h3 {
         serif; /* Solution de secours : n'importe quelle police à empattements. */
 
 }
-
 em { /* La balise em sert à mettre un mot en valeur dans le texte. */
 
     font-style: italic; /* Affiche le texte en italique. */
 
 }
-
 a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulignés. */
 
     color: inherit; /* inherit = « prends la même valeur que l'élément parent ». Le lien garde la couleur du texte qui l'entoure. */
 
     text-decoration: none; /* Supprime le soulignement par défaut des liens. */
-
-}
-
 .navbar { /* Le point (.) cible tous les éléments qui ont class="navbar" dans le HTML. */
-
+  }
     position: absolute; /* Sort la barre du flux normal : elle flotte par-dessus le début de la page et les éléments suivants ne tiennent plus compte d'elle. */
 
     top: 0; /* Colle la barre tout en haut. */
@@ -89,6 +73,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .logo { /* Le logo du site (class="logo"). */
 
     font-family:
@@ -103,11 +88,13 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .logo span { /* L'espace entre deux sélecteurs signifie « à l'intérieur de » : tous les <span> qui se trouvent dans .logo. */
 
     color: var(--red); /* Cette partie du logo devient rouge, grâce à la variable définie dans :root. */
 
 }
+
 
 .navbar nav { /* La balise <nav> (le menu) située à l'intérieur de .navbar. */
 
@@ -116,6 +103,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     gap: 35px; /* Espace de 35 pixels entre chaque lien. */
 
 }
+
 
 .navbar nav a { /* Les liens <a> situés dans le menu, à l'intérieur de .navbar. */
 
@@ -128,6 +116,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     position: relative; /* Le lien reste à sa place, mais devient un point de repère pour les éléments en position absolute placés à l'intérieur (ici, la ligne ::after). */
 
 }
+
 
 .navbar nav a::after { /* ::after est un pseudo-élément : il crée un élément « virtuel » juste après le contenu du lien, sans toucher au HTML. Ici, il sert de ligne de soulignement. */
 
@@ -149,12 +138,12 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .navbar nav a:hover::after { /* :hover est une pseudo-classe : elle s'active quand la souris passe sur l'élément. Ici : quand on survole un lien, on modifie sa ligne ::after. */
 
     width: 100%; /* La ligne passe à toute la largeur du lien. Grâce à la transition, elle se dessine progressivement de gauche à droite. */
 
 }
-
 .hero { /* Le hero est la grande zone d'accueil : la première chose que l'on voit en arrivant sur la page. */
 
     min-height: 100vh; /* Hauteur minimale de la section. vh = « viewport height » (hauteur de la fenêtre). 100vh = 100 % de la hauteur de l'écran : le hero remplit au moins tout l'écran. */
@@ -176,11 +165,13 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .hero-content { /* Le bloc de texte du hero (colonne de gauche). */
 
     max-width: 650px; /* Largeur maximale : le bloc ne dépasse jamais 650 pixels, même sur un très grand écran. */
 
 }
+
 
 .small-label { /* La petite étiquette placée au-dessus du titre. */
 
@@ -195,6 +186,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     margin-bottom: 30px; /* Marge extérieure : 30 pixels d'espace sous l'étiquette. */
 
 }
+
 
 .hero h1 { /* Le grand titre, uniquement celui qui se trouve dans .hero. */
 
@@ -215,11 +207,13 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .hero h1 em { /* Les mots en <em> à l'intérieur du titre du hero. */
 
     color: var(--red); /* Le mot mis en valeur devient rouge. */
 
 }
+
 
 .hero-description { /* Le paragraphe de présentation sous le titre. */
 
@@ -232,6 +226,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     margin-bottom: 40px; /* 40 pixels d'espace sous le paragraphe. */
 
 }
+
 
 .button { /* Le bouton (ou lien) d'action. */
 
@@ -253,17 +248,20 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .button span { /* Le <span> à l'intérieur du bouton (probablement la flèche). */
 
     font-size: 20px; /* Agrandit la flèche par rapport au texte du bouton. */
 
 }
 
+
 .hero-image { /* Le bloc de l'image (colonne de droite). */
 
     position: relative; /* L'élément reste à sa place, mais devient un point de repère pour d'éventuels éléments positionnés en absolute à l'intérieur. */
 
 }
+
 
 .hero-image img { /* L'image située dans .hero-image. */
 
@@ -276,6 +274,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     display: block; /* Transforme l'image en bloc. Par défaut, une image se comporte comme du texte et un petit espace parasite apparaît en dessous. Cette ligne le supprime. */
 
 }
+
 
 .hero-caption { /* La légende sous l'image. */
 
@@ -294,7 +293,6 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     color: var(--gray); /* Texte gris. */
 
 }
-
 .section-number { /* Une classe réutilisable : on écrit le style une seule fois, puis on l'applique à plusieurs endroits du HTML avec class="section-number". */
 
     font-size: 12px; /* Très petit texte : 12 pixels. */
@@ -306,7 +304,6 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     color: var(--red); /* Texte rouge, grâce à la variable définie dans :root. Si on change --red, tous les numéros changent aussi. */
 
 }
-
 .about { /* La section « À propos » (class="about"). */
 
     padding: 140px 8%; /* Espace intérieur : 140px en haut et en bas, 8% à gauche et à droite. */
@@ -314,6 +311,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     background: var(--paper); /* Fond beige (variable --paper) pour distinguer cette section du reste de la page. */
 
 }
+
 
 .about-content { /* Le conteneur qui regroupe l'image et le texte. */
 
@@ -331,6 +329,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .about-image img { /* L'image située dans .about-image. */
 
     width: 100%; /* L'image prend toute la largeur de sa colonne. */
@@ -340,6 +339,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     object-fit: cover; /* L'image remplit la zone sans se déformer : elle est recadrée si nécessaire. */
 
 }
+
 
 .about-text h2 { /* Le titre h2 situé dans .about-text. */
 
@@ -358,6 +358,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .about-text h2 em { /* Les mots en <em> à l'intérieur de ce titre. */
 
     color: var(--red); /* Le mot mis en valeur devient rouge. */
@@ -375,12 +376,12 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     margin-bottom: 25px; /* 25 pixels d'espace sous chaque paragraphe, pour les séparer. */
 
 }
-
 .gallery { /* La section Galerie (class="gallery"). */
 
     padding: 150px 8%; /* Espace intérieur : 150px en haut et en bas, 8% à gauche et à droite. */
 
 }
+
 
 .section-header { /* Le bloc d'en-tête de la section : il regroupe le numéro et le titre. */
 
@@ -388,11 +389,13 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .section-header .section-number { /* L'espace entre deux sélecteurs signifie « à l'intérieur de » : on cible uniquement le .section-number qui se trouve dans un .section-header. C'est plus précis que la simple classe de l'étape 7. */
 
     margin-bottom: 30px; /* 30 pixels d'espace sous le numéro, pour le séparer du titre. Les autres propriétés (rouge, majuscules, etc.) viennent de la règle .section-number de l'étape 7. */
 
 }
+
 
 .section-header h2 { /* Le titre h2 situé dans .section-header. */
 
@@ -409,12 +412,12 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .section-header h2 em { /* Les mots en <em> à l'intérieur de ce titre. */
 
     color: var(--red); /* Le mot mis en valeur devient rouge. */
 
 }
-
 .gallery-grid { /* Le conteneur qui regroupe toutes les œuvres de la galerie. */
 
     display: grid; /* CSS Grid : les œuvres (enfants directs) se placent dans les cases d'une grille. */
@@ -426,11 +429,13 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .artwork { /* Le bloc d'une œuvre (image + informations). */
 
     position: relative; /* L'élément reste à sa place, mais devient un point de repère pour les éléments positionnés en absolute à l'intérieur. */
 
 }
+
 
 .artwork-large { /* La grande œuvre. */
 
@@ -438,6 +443,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
         1 / span 7; /* Commence à la ligne de grille n°1 et occupe 7 colonnes (donc les colonnes 1 à 7). */
 
 }
+
 
 .artwork-small { /* La petite œuvre. */
 
@@ -448,12 +454,14 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .artwork-wide { /* L'œuvre large. */
 
     grid-column:
         3 / span 8; /* Commence à la ligne n°3 et occupe 8 colonnes : elle est centrée, avec 2 colonnes vides de chaque côté. */
 
 }
+
 
 .image-container { /* Le cadre qui contient l'image de l'œuvre. */
 
@@ -464,6 +472,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     background: #ddd; /* Gris clair, visible tant que l'image n'est pas chargée. */
 
 }
+
 
 .image-container img { /* L'image située dans le cadre. */
 
@@ -481,11 +490,13 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .artwork-small .image-container img { /* Plus précis : seulement l'image du cadre qui est dans .artwork-small. */
 
     height: 500px; /* Remplace les 620px pour la petite œuvre. Le sélecteur le plus précis l'emporte. */
 
 }
+
 
 .artwork-wide .image-container img { /* Seulement l'image du cadre qui est dans .artwork-wide. */
 
@@ -493,11 +504,13 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .artwork:hover img { /* :hover = quand la souris passe sur l'élément. Ici, quand on survole l'œuvre (et pas seulement l'image), c'est l'image qui change. */
 
     transform: scale(1.04); /* transform modifie la forme ou la taille sans toucher à la mise en page. scale(1.04) agrandit l'image de 4 %. Grâce à la transition, le zoom est fluide. */
 
 }
+
 
 .artwork-number { /* Le petit numéro rond posé sur l'image. */
 
@@ -525,6 +538,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .artwork-info { /* Le bloc d'informations sous l'image (titre, description, détail). */
 
     display: flex; /* Aligne les éléments côte à côte. */
@@ -541,6 +555,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .artwork-info h3 { /* Le titre h3 dans le bloc d'informations. */
 
     font-size: 25px; /* Taille du titre de l'œuvre. */
@@ -548,6 +563,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     font-weight: 400; /* Poids normal (un h3 est en gras par défaut). */
 
 }
+
 
 .artwork-info p { /* Les paragraphes dans le bloc d'informations. */
 
@@ -557,6 +573,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .artwork-info > span { /* Le symbole > signifie « enfant direct » : seuls les <span> placés directement dans .artwork-info sont concernés, pas ceux qui seraient plus profond. */
 
     color: var(--gray); /* Texte gris. */
@@ -564,7 +581,6 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     font-size: 13px; /* Petit texte. */
 
 }
-
 .studio { /* La section Studio (class="studio"). */
 
     background: var(--black); /* Fond noir (variable --black). */
@@ -585,6 +601,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .studio-image img { /* L'image située dans .studio-image. */
 
     width: 100%; /* L'image prend toute la largeur de sa colonne. */
@@ -594,6 +611,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     object-fit: cover; /* L'image remplit la zone sans se déformer : elle est recadrée si nécessaire. */
 
 }
+
 
 .studio-text h2 { /* Le titre h2 situé dans .studio-text. */
 
@@ -612,11 +630,13 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .studio-text h2 em { /* Les mots en <em> à l'intérieur de ce titre. */
 
     color: #d07855; /* Orange-rouge clair, écrit directement en hexadécimal. Il est plus lisible sur fond noir que le rouge foncé (--red) utilisé ailleurs. */
 
 }
+
 
 .studio-text p { /* Les paragraphes situés dans .studio-text. */
 
@@ -629,12 +649,12 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     font-size: 17px; /* Taille de texte légèrement plus grande que la normale. */
 
 }
-
 .education { /* La section Parcours / Formation (class="education"). */
 
     padding: 150px 8%; /* Espace intérieur : 150px en haut et en bas, 8% à gauche et à droite. */
 
 }
+
 
 .education > h2 { /* Le symbole > signifie « enfant direct » : seul le h2 placé directement dans .education est concerné, pas ceux qui seraient plus profond. */
 
@@ -651,11 +671,13 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .timeline { /* Le conteneur qui regroupe toutes les étapes du parcours. */
 
     max-width: 1000px; /* Largeur maximale : la liste ne s'étire pas au-delà de 1000 pixels, même sur un grand écran. */
 
 }
+
 
 .timeline-item { /* Une ligne de la timeline (une date + une description). */
 
@@ -673,6 +695,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .timeline-item > span { /* Les <span> placés directement dans .timeline-item (ici, la date). */
 
     color: var(--red); /* Date en rouge, grâce à la variable définie dans :root. */
@@ -680,6 +703,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     font-size: 13px; /* Petit texte. */
 
 }
+
 
 .timeline-item h3 { /* Le titre h3 de chaque étape. */
 
@@ -691,6 +715,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .timeline-item p { /* Les paragraphes de chaque étape. */
 
     color: #555; /* Gris foncé, écrit directement en hexadécimal. */
@@ -699,12 +724,11 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .timeline-item small { /* La balise <small> sert à écrire un petit texte secondaire. */
 
     color: var(--gray); /* Texte gris, pour une information moins importante. */
-
 }
-
 .statement { /* La section Citation (class="statement"). */
 
     background: var(--red); /* Fond rouge (variable --red). */
@@ -714,6 +738,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     padding: 150px 8%; /* Espace intérieur : 150px en haut et en bas, 8% à gauche et à droite. */
 
 }
+
 
 .statement-content { /* Le bloc qui contient la citation. */
 
@@ -725,6 +750,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .statement-content > span { /* Les <span> placés directement dans .statement-content (> = enfant direct). */
 
     font-size: 11px; /* Très petit texte. */
@@ -732,6 +758,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     letter-spacing: 3px; /* Espace fortement les lettres pour un style aéré. */
 
 }
+
 
 .statement blockquote { /* La balise <blockquote> est la balise HTML des citations. */
 
@@ -746,13 +773,14 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
             80px /* Maximum : jamais plus de 80 pixels. */
         );
 
-    line-height: 1; /* Interligne égal à la taille de la police : des lignes serrées, sans unité. */
+    line-height: 1; /* Interligne égal à la taille de la police : des lignes serrées, sans nombre d'unité. */
 
     font-style: italic; /* Affiche la citation en italique. */
 
     margin: 50px 0; /* Marge extérieure : 50px en haut et en bas, 0 à gauche et à droite. La citation est bien séparée des éléments autour. */
 
 }
+
 
 .statement p { /* Les paragraphes situés dans .statement (ici, probablement l'auteur de la citation). */
 
@@ -763,12 +791,12 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     letter-spacing: 2px; /* Espace légèrement les lettres. */
 
 }
-
 .contact { /* La section Contact (class="contact"). */
 
     padding: 150px 8%; /* Espace intérieur : 150px en haut et en bas, 8% à gauche et à droite. */
 
 }
+
 
 .contact-content { /* Le conteneur qui regroupe le titre et les coordonnées. */
 
@@ -783,6 +811,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     margin-top: 70px; /* 70 pixels d'espace au-dessus, pour séparer ce bloc du haut de la section. */
 
 }
+
 
 .contact h2 { /* Le titre h2 situé dans .contact. */
 
@@ -799,17 +828,20 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
 
 }
 
+
 .contact h2 em { /* Les mots en <em> à l'intérieur de ce titre. */
 
     color: var(--red); /* Le mot mis en valeur devient rouge. */
 
 }
 
+
 .contact-details { /* Le bloc des coordonnées (colonne de droite). */
 
     padding-top: 20px; /* 20 pixels d'espace intérieur au-dessus, pour descendre un peu le contenu et l'aligner visuellement avec le titre. */
 
 }
+
 
 .contact-details p { /* Les paragraphes situés dans .contact-details. */
 
@@ -818,6 +850,7 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     margin-bottom: 40px; /* 40 pixels d'espace sous le paragraphe, pour le séparer des liens. */
 
 }
+
 
 .contact-details a { /* Les liens situés dans .contact-details (e-mail, réseaux, etc.). */
 
@@ -832,12 +865,11 @@ a { /* La balise a représente les liens. Par défaut, ils sont bleus et soulign
     padding-bottom: 4px; /* 4 pixels d'espace entre le texte et le trait, pour qu'il ne soit pas collé aux lettres. */
 
 }
-
 footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il cible la balise HTML <footer> (le pied de page). */
 
     padding: 25px 6%; /* Espace intérieur : 25px en haut et en bas, 6% à gauche et à droite. */
 
-    border-top: 1px solid #bbb; /* Un fin trait gris clair au-dessus du footer, pour le séparer du reste de la page. */
+    border-top: 1px solid #bbb; /* Un fin trait gris clair au-dessus du footer, pour le séparer du reste de la page. Une bordure se décrit avec : épaisseur (1px), style (solid = trait plein) et couleur. */
 
     display: flex; /* Flexbox : les enfants directs du footer (les textes) se placent côte à côte. */
 
@@ -850,10 +882,9 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
     letter-spacing: 1px; /* Espace légèrement les lettres pour un style plus aéré. */
 
     color: var(--gray); /* Texte gris (variable --gray), discret, pour une information secondaire. */
-
 }
-
 @media (max-width: 900px) { /* @media = media query : des règles qui ne s'appliquent que dans certaines conditions. Ici : seulement si la fenêtre fait 900 pixels de large ou moins (tablettes et petits écrans). C'est le principe du responsive design : la page s'adapte à la taille de l'écran. Ces règles viennent après les règles normales : en cas de conflit, elles les remplacent. */
+
 
     .navbar { /* La barre de navigation. */
 
@@ -861,17 +892,20 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
+
     .navbar nav { /* Le menu. */
 
         gap: 15px; /* Rapproche les liens : 15 pixels au lieu de 35. */
 
     }
 
+
     .navbar nav a { /* Les liens du menu. */
 
         font-size: 10px; /* Texte plus petit pour que le menu tienne sur un écran moins large. */
 
     }
+
 
     .hero { /* La section d'accueil. */
 
@@ -881,17 +915,20 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
+
     .hero-image { /* Le bloc de l'image du hero. */
 
         margin-top: 30px; /* Ajoute 30 pixels d'espace au-dessus de l'image, maintenant placée sous le texte. */
 
     }
 
+
     .hero-image img { /* L'image du hero. */
 
         height: 550px; /* Hauteur réduite : 550 pixels au lieu de 680. */
 
     }
+
 
     .about-content { /* Le conteneur de la section « À propos ». */
 
@@ -901,11 +938,13 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
+
     .about-image img { /* L'image de la section « À propos ». */
 
         height: 500px; /* Hauteur réduite : 500 pixels au lieu de 600. */
 
     }
+
 
     .gallery-grid { /* La grille de la galerie. */
 
@@ -913,17 +952,20 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
+
     .artwork { /* Chaque œuvre de la galerie. */
 
         margin-bottom: 70px; /* 70 pixels d'espace sous chaque œuvre. Il remplace le gap de la grille, qui n'existe plus. */
 
     }
 
+
     .artwork-small { /* La petite œuvre. */
 
         margin-top: 0; /* Supprime le décalage de 150 pixels, devenu inutile en affichage empilé. */
 
     }
+
 
     .artwork img, /* La virgule regroupe plusieurs sélecteurs : la même règle s'applique aux trois. */
     .artwork-small .image-container img,
@@ -933,6 +975,7 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
+
     .studio { /* La section Studio. */
 
         grid-template-columns: 1fr; /* Une seule colonne : l'image et le texte s'empilent. */
@@ -941,11 +984,13 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
+
     .studio-image img { /* L'image de la section Studio. */
 
         height: 500px; /* Hauteur réduite : 500 pixels au lieu de 650. */
 
     }
+
 
     .contact-content { /* Le conteneur de la section Contact. */
 
@@ -955,15 +1000,18 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
-} /* ← FIN de la media query 900px (il manquait cette accolade) */
+}
+
 
 @media (max-width: 600px) { /* Une deuxième media query, pour les écrans de 600 pixels ou moins (téléphones). Elle s'ajoute à la précédente : un téléphone reçoit les règles de 900px ET celles de 600px. En cas de conflit, ces dernières gagnent, car elles viennent en dernier. */
+
 
     .navbar nav { /* Le menu. */
 
         display: none; /* Cache complètement le menu : l'élément disparaît de la page, comme s'il n'existait pas. Il n'y a plus assez de place pour les liens. */
 
     }
+
 
     .hero { /* La section d'accueil. */
 
@@ -973,6 +1021,7 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
+
     .hero h1 { /* Le grand titre du hero. */
 
         font-size: 65px; /* Taille fixe de 65 pixels : elle remplace le clamp() utilisé sur grand écran. */
@@ -981,11 +1030,13 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
+
     .hero-image img { /* L'image du hero. */
 
         height: 450px; /* Hauteur encore réduite : 450 pixels. */
 
     }
+
 
     .about, /* Quatre sections regroupées avec des virgules : la même règle s'applique à toutes. */
     .gallery,
@@ -998,11 +1049,13 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
+
     .about-image img { /* L'image de la section « À propos ». */
 
         height: 400px; /* Hauteur réduite : 400 pixels. */
 
     }
+
 
     .artwork img, /* Les images de la galerie (mêmes sélecteurs regroupés que plus haut). */
     .artwork-small .image-container img,
@@ -1012,17 +1065,20 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
+
     .studio { /* La section Studio. */
 
         padding: 90px 6%; /* Espace intérieur réduit : 90px en haut et en bas, 6% à gauche et à droite. */
 
     }
 
+
     .studio-image img { /* L'image de la section Studio. */
 
         height: 400px; /* Hauteur réduite : 400 pixels. */
 
     }
+
 
     .timeline-item { /* Une ligne de la timeline. */
 
@@ -1032,17 +1088,20 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
 
     }
 
+
     .statement { /* La section Citation. */
 
         padding: 100px 6%; /* Espace intérieur réduit : 100px en haut et en bas, 6% à gauche et à droite. */
 
     }
 
+
     .statement blockquote { /* La citation. */
 
         font-size: 42px; /* Taille fixe de 42 pixels : elle remplace le clamp() utilisé sur grand écran. */
 
     }
+
 
     footer { /* Le pied de page. */
 
@@ -1051,3 +1110,5 @@ footer { /* Ici, il n'y a ni point ni #, donc c'est un sélecteur de balise : il
         gap: 10px; /* 10 pixels d'espace entre les éléments empilés. */
 
     }
+
+}
